@@ -1,0 +1,6 @@
+site_name: Мой Проект MkDocs
+
+nav:
+  - Главная: index.md
+  - О проекте: about.md
+  - Гитхаб: git.md
