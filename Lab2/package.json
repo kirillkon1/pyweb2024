@@ -1,0 +1,27 @@
+{
+  "name": "pyweb",
+  "version": "1.0.0",
+  "description": "Кастомный сайт с использованием MkDocs и Bulma",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss src/css/styles.css -o docs/css/styles.css",
+    "copy:js": "cpx src/js/scripts.js docs/js/",
+    "minify:html": "find site -name '*.html' -exec html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true -o {} {} \\;",
+    "build": "mkdocs build",
+    "deploy": "npm run build:css && npm run build && npm run copy:js && npm run minify:html && cpx \"site/**/*\" docs/",
+    "serve": "npm run build:css && npm run copy:js && mkdocs serve"
+  },
+  "keywords": [],
+  "author": "Ваше Имя",
+  "license": "MIT",
+  "dependencies": {
+    "bulma": "^0.9.4"
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "cssnano": "^5.0.0",
+    "html-minifier": "^4.0.0",
+    "postcss": "^8.0.0",
+    "postcss-cli": "^9.0.0"
+  }
+}

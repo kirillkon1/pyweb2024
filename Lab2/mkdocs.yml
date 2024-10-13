@@ -1,0 +1,21 @@
+# mkdocs.yml
+site_name: Мой Кастомный Сайт
+site_description: Описание моего сайта
+site_author: Ваше Имя
+
+theme:
+  name: null
+  custom_dir: templates
+
+nav:
+  - Главная: index.md
+  - О GitHub: about.md
+
+extra_css:
+  - css/styles.css
+
+extra_javascript:
+  - js/scripts.js
+
+plugins:
+  - search

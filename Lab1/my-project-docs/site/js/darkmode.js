@@ -29,7 +29,7 @@ function updateModeToggle(mode) {
 }
 
 function onSystemColorSchemeChange(event) {
-    // Update site color mode to match system color mode.
+    // Update project color mode to match system color mode.
     setColorMode(event.matches ? 'dark' : 'light');
 }
 
