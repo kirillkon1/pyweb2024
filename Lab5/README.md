@@ -9,7 +9,11 @@
 ### CLI
 ![img.png](img/img.png)
 
-### Пример 
+### Docker Desktop
+
+![img.png](img/img_3.png)
+
+## Пример 
 ![img_1.png](img/img_1.png)
 
 ### База данных

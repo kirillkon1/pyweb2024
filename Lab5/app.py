@@ -14,7 +14,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 
-# model
+# db model
 class Counter(db.Model):
     __tablename__ = 'counter'
     id = db.Column(db.Integer, primary_key=True)
@@ -51,7 +51,6 @@ def hello():
 
     table_html = table.get_html_string(attributes={"class": "table table-striped"})
 
-    # Возврат текста с количеством кликов и таблицей
     return f"""
         <div>
             <h1>Кол-во кликов: {total_hits}</h1>
