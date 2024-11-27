@@ -1,6 +1,6 @@
-## Getting Started Walk-through for IT Pros and System Administrators
+# Getting Started Walk-through for IT Pros and System Administrators
 
-### **Stage 1: The Basics**
+## **Stage 1: The Basics**
 #### 1.0 Running your first container
 
 ```bash
