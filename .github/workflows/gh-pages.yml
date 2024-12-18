@@ -30,19 +30,31 @@ jobs:
           node-version: "18"
 
       - name: Install Node.js Dependencies
-        run: npm install
+        run: |
+          cd Lab2_v3
+          npm install
 
       - name: Build CSS and JS
-        run: npm run build
+        run: |
+          cd Lab2_v3
+          npm run build
 
       - name: Build Site with MkDocs
-        run: mkdocs build --clean
+        run: |
+          cd Lab2_v3
+          mkdocs build --clean
 
       - name: Validate HTML
-        run: npm run validate:html
+        run: |
+          cd Lab2_v3
+          npm run validate:html
+
+      - name: Add .nojekyll
+        run: |
+          touch Lab2_v3/site/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          publish_dir: ./Lab2_v3/site
