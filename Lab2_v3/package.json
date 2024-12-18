@@ -1,0 +1,25 @@
+{
+  "name": "python-static-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss custom_theme/static/main.css -o custom_theme/static/main.min.css",
+    "minify:js": "terser custom_theme/static/main.js -o custom_theme/static/main.min.js",
+    "validate:html": "htmlhint site/**/*.html",
+    "minify:html": "find site -name '*.html' -exec html-minifier-terser --collapse-whitespace --remove-comments --minify-js true --minify-css true --output {} {} \\;",
+    "build": "npm run build:css && npm run minify:js && mkdocs build --clean && npm run minify:html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
+    "html-minifier-terser": "^7.2.0",
+    "htmlhint": "^1.1.4",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "terser": "^5.37.0"
+  }
+}

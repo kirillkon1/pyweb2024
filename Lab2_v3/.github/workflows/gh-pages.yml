@@ -1,0 +1,48 @@
+name: Deploy Custom MkDocs Site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Python Dependencies
+        run: |
+          pip install mkdocs mkdocs-material
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install Node.js Dependencies
+        run: npm install
+
+      - name: Build CSS and JS
+        run: npm run build
+
+      - name: Build Site with MkDocs
+        run: mkdocs build --clean
+
+      - name: Validate HTML
+        run: npm run validate:html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site

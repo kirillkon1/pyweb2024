@@ -1,0 +1,13 @@
+site_name: "Мой кастомный сайт"
+docs_dir: my_static_site
+
+nav:
+  - Главная: index.md
+  - Обо мне: about/index.md
+  - Проекты: projects/index.md
+  - Блог: blog/index.md
+  - Контакты: contact/index.md
+
+theme:
+  name: null
+  custom_dir: custom_theme
