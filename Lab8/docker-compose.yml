@@ -7,7 +7,7 @@ services:
       dockerfile: service2/Dockerfile
     container_name: service2
     ports:
-      - "50051:50051"
+      - "50052:50052"
     command: sh -c "python populate_db.py && python server.py"
 
   service1:
